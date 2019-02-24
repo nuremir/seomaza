@@ -1,4 +1,4 @@
-const {series, src, dest, parallel } = require('gulp');
+const {series, src, dest, parallel, watch} = require('gulp');
 const cleanHandle = require('gulp-clean');
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
@@ -24,6 +24,11 @@ function html() {
     .pipe(dest('./dist/css'));
 }
 
+const watch2 = () => {
+    watch('./sass/**/*.scss', css);
+}
+
 exports.css = css;
 exports.clean = clean;
+exports.watch2 = watch2;
 exports.default = series(clean, parallel(html, css, js));         
