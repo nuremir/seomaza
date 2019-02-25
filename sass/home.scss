@@ -1,0 +1,33 @@
+$defaulttColor: #ff6a40;
+$defaulttColor2: #1eba87;
+$border: 1px solid red;
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    border: $border;
+    .seomaza-top-bar {
+        background-color: $defaulttColor;
+        .register {
+            display: inline;
+            color: #fff;
+            a {
+                text-decoration: none;
+                color: #fff;
+                padding: 0 10px;
+                font-size: 16px;
+            }
+        }
+        .contacts {
+            display: inline;
+            color: #fff;
+            font-size: 12px;
+            span {
+                padding: 0 10xp;
+            }
+        }
+    }
+}
