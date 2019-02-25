@@ -21,14 +21,15 @@ function js() {
 
 function html() {
     return src('./templates/**/*.html')
-    .pipe(dest('./dist/css'));
+    .pipe(dest('./dist/'));
 }
 
-const watch2 = () => {
+const dev = () => {
+    watch('./templates/**/*.html', html)
     watch('./sass/**/*.scss', css);
 }
 
 exports.css = css;
 exports.clean = clean;
-exports.watch2 = watch2;
+exports.dev = dev;
 exports.default = series(clean, parallel(html, css, js));         
